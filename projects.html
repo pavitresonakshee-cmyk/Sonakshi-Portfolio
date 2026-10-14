@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Projects | Sonakshi Pavitre</title>
+  <meta name="description" content="Explore database and software projects by Sonakshi Pavitre including Hostel Management, Vehicle Rental Management, and Smart Presentation System.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-img-frame {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition-normal);
+    }
+
+    .project-card:hover .project-img {
+      transform: scale(1.05);
+    }
+
+    .project-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      gap: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .project-placeholder svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    .project-category {
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .project-tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-badge {
+      font-size: 0.775rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .project-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .modal-section { margin-bottom: 1.5rem; }
+    .modal-section h4 { font-size: 1.1rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .modal-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .modal-list li { color: var(--text-muted); font-size: 0.95rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .modal-list .bullet { color: var(--primary); font-weight: bold; }
+    .badge-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+    .badge-wrap .badge {
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: rgba(124, 58, 237, 0.08);
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      color: var(--text-main);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">S</div>
+        <span>Sonakshi<span class="gradient-text">.</span></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="certificates.html">Certificates</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content container">
+    <div class="page-header reveal">
+      <span class="section-tag">PORTFOLIO WORK</span>
+      <h1 class="section-title">Featured <span class="gradient-text">Projects</span></h1>
+      <p class="section-subtitle">Showcasing software systems, database designs, and technology solutions.</p>
+    </div>
+
+    <div class="grid-3 reveal">
+      <!-- Project 1: Hostel Management -->
+      <div class="glass-card project-card">
+        <div class="project-img-frame">
+          <img src="assets/projects/hostel-management.jpg" alt="Hostel Management Database System" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-placeholder" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            <span>Hostel Management DBMS</span>
+          </div>
+        </div>
+
+        <div class="project-category">Database Management / DBMS</div>
+        <h3 class="project-title">Hostel Management Database System</h3>
+        <p class="project-desc">
+          A database-oriented project designed to manage hostel-related information in an organized and structured manner, storing data on students, room allocations, and records.
+        </p>
+
+        <div class="project-tech-pills">
+          <span class="tech-badge">Oracle DB</span>
+          <span class="tech-badge">SQL</span>
+          <span class="tech-badge">Java</span>
+          <span class="tech-badge">JDBC</span>
+        </div>
+
+        <div class="project-actions">
+          <button class="btn btn-primary btn-sm" onclick="openProjectModal('hostel-management')">
+            View Details
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <span style="font-size: 0.85rem; color: var(--text-dim);">Project Details</span>
+        </div>
+      </div>
+
+      <!-- Project 2: Vehicle Rental -->
+      <div class="glass-card project-card">
+        <div class="project-img-frame">
+          <img src="assets/projects/vehicle-rental.jpg" alt="Vehicle Rental Management System" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-placeholder" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            <span>Vehicle Rental DBMS</span>
+          </div>
+        </div>
+
+        <div class="project-category">Database Management / Software</div>
+        <h3 class="project-title">Vehicle Rental Management System</h3>
+        <p class="project-desc">
+          A software and database project to organize vehicle rental records, track vehicle availability, customer profiles, and simplify booking management.
+        </p>
+
+        <div class="project-tech-pills">
+          <span class="tech-badge">DBMS</span>
+          <span class="tech-badge">SQL</span>
+          <span class="tech-badge">Java</span>
+          <span class="tech-badge">JDBC</span>
+        </div>
+
+        <div class="project-actions">
+          <button class="btn btn-primary btn-sm" onclick="openProjectModal('vehicle-rental')">
+            View Details
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <span style="font-size: 0.85rem; color: var(--text-dim);">Project Details</span>
+        </div>
+      </div>
+
+      <!-- Project 3: Smart Presentation System -->
+      <div class="glass-card project-card">
+        <div class="project-img-frame">
+          <img src="assets/projects/smart-presentation.jpg" alt="AI-Powered Smart Presentation System" class="project-img"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="project-placeholder" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <span>Smart Presentation System</span>
+          </div>
+        </div>
+
+        <div class="project-category">Smart Technology / Concept</div>
+        <h3 class="project-title">AI-Powered Smart Presentation System</h3>
+        <p class="project-desc">
+          A concept/project focused on making presentations interactive, organized, and intelligent by providing AI-powered assistance for presentation tasks.
+        </p>
+
+        <div class="project-tech-pills">
+          <span class="tech-badge">Smart Assistance</span>
+          <span class="tech-badge">Interactive UI</span>
+          <span class="tech-badge">Presentation Tech</span>
+        </div>
+
+        <div class="project-actions">
+          <button class="btn btn-primary btn-sm" onclick="openProjectModal('smart-presentation')">
+            View Details
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <span style="font-size: 0.85rem; color: var(--text-dim);">Project Details</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Interactive Project Details Modal -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-container">
+      <button class="modal-close" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+
+      <span class="project-category" id="modalCategory">Category</span>
+      <h2 class="section-title" id="modalTitle" style="font-size: 1.85rem; margin-bottom: 1rem;">Project Title</h2>
+
+      <div class="modal-section">
+        <h4>Description</h4>
+        <p id="modalDescription" style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;"></p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Key Features</h4>
+        <ul class="modal-list" id="modalFeatures"></ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technologies Used</h4>
+        <div class="badge-wrap" id="modalTech"></div>
+      </div>
+
+      <div class="modal-section">
+        <h4>Key Project Learning Outcomes</h4>
+        <ul class="modal-list" id="modalLearnings"></ul>
+      </div>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  </button>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-info">
+        <h3>Sonakshi Pavitre</h3>
+        <p>Data Science Student | Computer Engineering</p>
+      </div>
+      <div class="social-buttons">
+        <a href="https://github.com/Sonakshi428" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sonakshi-pavitre-99455a33/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="mailto:pavitresonakshee@gmail.com" class="social-btn" aria-label="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+      <div class="footer-copy">
+        © 2026 Sonakshi Pavitre. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
